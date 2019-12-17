@@ -82,7 +82,7 @@
             <a href={{ mars_data.img_large }}>
               <img src={{ mars_data.img_large }} alt="Image" class="img-fluid mb-4">
             </a>
-            </div>
+          </div>
           <div class="col-6 ml-auto mr-auto section-padding">
             <div class='border px-2 py-2'>
               <h3>Mars Weather</h3>
@@ -132,27 +132,21 @@
               </tbody>
             </table>
           </div>
-          <div class="col-md-3 col-sm-6 ml-auto mr-auto">
-            <div class="item python btn">
-                <a href="clouds.html" class="item-wrap fancybox">
-                  <div class="work-info">
-                    <h3>Clouds</h3>
-                  </div>
-                  <img class="img-fluid" src="img/city-lat-clouds.png">
-                </a>
-            </div>
-            <div class="item python btn">
-                <a href="humidity.html" class="item-wrap fancybox">
-                  <div class="work-info">
-                    <h3>Humidity</h3>
-                  </div>
-                  <img class="img-fluid" src="img/city-lat-humidity.png">
-                </a>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Mars Hemispheres</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>{{ mars_data.hemisphere_image_list.0.title }}</h3>
+            <img src={{ mars_data.hemisphere_image_list.0.img_url }} alt="" class="img-fluid mb-4 img-responsive">
           </div>
         </div>
       </div>
     </div>
+    
 
   <footer class="footer" role="contentinfo">
     <div class="container">
