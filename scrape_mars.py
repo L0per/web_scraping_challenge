@@ -7,8 +7,9 @@ import requests
 def init_browser():
     # Prepare chromedriver
     # MUST USE CHROME 79
-    executable_path = {"executable_path": "C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/3/Activities/10-Stu_Scrape_Weather/Unsolved/chromedriver.exe"}
-    return Browser("chrome", {"executable_path": "C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/3/Activities/10-Stu_Scrape_Weather/Unsolved/chromedriver.exe"}, headless=False)
+    # Desktop path C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/3/Activities/10-Stu_Scrape_Weather/Unsolved/chromedriver.exe
+    executable_path = {"executable_path": "C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/web_scraping_challenge/chromedriver.exe"}
+    return Browser("chrome", **executable_path, headless=False)
 
 
 def scrape():

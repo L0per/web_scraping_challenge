@@ -50,7 +50,7 @@
 
   <nav class="navbar navbar-expand-md navbar-light custom-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="http://127.0.0.1:5000/">
         <img src="https://cdn0.iconfinder.com/data/icons/planets-rocket-and-science-1/28/6_-_mars-512.png" width="50" height="50" class="d-inline-block align-center" alt="">
         Mars Info.
       </a>      
@@ -63,10 +63,9 @@
 
     <div class="site-section">
       <div class="container">
-        <a class="btn btn-secondary btn-lg btn-block" href="http://127.0.0.1:5000/scrape" role="button">Scrape New Data</a>
+        <a type='button' class="btn btn-danger btn-lg btn-block" href="http://127.0.0.1:5000/scrape" role="button">Scrape New Data</a>
         <div class="row align-items-center">
           <div class="col-md-8 mb-4 mb-lg-0 pt-4">
-
             <h2><strong>Mars News</strong></h2>
             <h3>{{ mars_data.news_title }}</h3>
             <p>{{ mars_data.news_text }}</p>
@@ -85,7 +84,13 @@
             </a>
             </div>
           <div class="col-6 ml-auto mr-auto section-padding">
-            <h3>Mars Facts</h3>
+            <div class='border px-2 py-2'>
+              <h3>Mars Weather</h3>
+              <p>{{ mars_data.weather }}</p>
+            </div>
+            <div class='pt-5'>
+              <h3>Mars Facts</h3>
+            </div>
             <table class="table">
               <tbody>
                 <tr>
@@ -93,27 +98,27 @@
                   <td>6,792 km</td>
                 </tr>
                 <tr>
-                  <td>Polar Diameter:</td>
+                  <td><strong>Polar Diameter:</strong></td>
                   <td>6,752 km</td>
                 </tr>
                 <tr>
-                  <td>Mass:</td>
+                  <td><strong>Mass:</strong></td>
                   <td>6.39 � 10^23 kg (0.11 Earths)</td>
                 </tr>
                 <tr>
-                  <td>Moons:</td>
+                  <td><strong>Moons:</strong></td>
                   <td>2 (Phobos &amp; Deimos)</td>
                 </tr>
                 <tr>
-                  <td>Orbit Distance:</td>
+                  <td><strong>Orbit Distance:</strong></td>
                   <td>227,943,824 km (1.38 AU)</td>
                 </tr>
                 <tr>
-                  <td>Orbit Period:</td>
+                  <td><strong>Orbit Period:</strong></td>
                   <td>687 days (1.9 years)</td>
                 </tr>
                 <tr>
-                  <td>Surface Temperature:</td>
+                  <td><strong>Surface Temperature:</strong></td>
                   <td>-87 to -5 �C</td>
                 </tr>
                 <tr>
@@ -121,7 +126,7 @@
                   <td>2nd millennium BC</td>
                 </tr>
                 <tr>
-                  <td>Recorded By:</td>
+                  <td><strong>Recorded By:</strong></td>
                   <td>Egyptian astronomers</td>
                 </tr>
               </tbody>

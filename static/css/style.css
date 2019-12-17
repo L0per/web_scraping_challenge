@@ -8,6 +8,18 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.btn-primary {
+  color: #fff;
+  background-color: #ff6638;
+  border-color: #ff6638; /*set the color you want here*/
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ff3f38;
+  border-color: #ff3f38; /*set the color you want here*/
+}
+
 .section-padding {
   padding-top: 50px
 }
