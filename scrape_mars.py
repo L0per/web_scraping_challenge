@@ -3,12 +3,14 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import requests
+import time
 
 def init_browser():
     # Prepare chromedriver
     # MUST USE CHROME 79
     # Desktop path C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/3/Activities/10-Stu_Scrape_Weather/Unsolved/chromedriver.exe
     executable_path = {"executable_path": "C:/Bootcamp/Activities/12-Web-Scraping-and-Document-Databases/web_scraping_challenge/chromedriver.exe"}
+    # executable_path = {"executable_path": "chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
 
 
@@ -26,6 +28,8 @@ def scrape():
     news_url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser.visit(news_url)
 
+    time.sleep(2)
+
     # Create soup object and parse first news article title/text
     news_soup = bs(browser.html, 'html.parser')
     mars_scraped_info['news_title'] = news_soup.find("div",class_="content_title").text.strip()
@@ -39,7 +43,7 @@ def scrape():
     # Retrieve page
     img_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(img_url)
-
+ 
     # Create soup object
     img_soup = bs(browser.html, 'html.parser')
 
@@ -67,7 +71,12 @@ def scrape():
 
     # Crete soup object and parse weather paragraph
     soup = bs(response.text, 'html.parser')
-    mars_scraped_info['weather'] = soup.find('div', class_="js-tweet-text-container").find('p').text.split('hPapic')[0].rstrip()
+    
+    mars_weather = mars_scraped_info['weather'] = soup.find('div', class_="js-tweet-text-container").find('p').text.split('hPapic')[0].rstrip()
+        
+    # Only add to database if the weather if tweeted
+    if 'InSight' in mars_weather:
+        mars_scraped_info['weather'] = mars_weather
 
 
     #####################################################
