@@ -27,7 +27,8 @@ def scrape():
     # Retrieve page
     news_url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser.visit(news_url)
-
+    
+    # Wait for page load
     time.sleep(2)
 
     # Create soup object and parse first news article title/text
@@ -72,7 +73,7 @@ def scrape():
     # Crete soup object and parse weather paragraph
     soup = bs(response.text, 'html.parser')
     
-    mars_weather = mars_scraped_info['weather'] = soup.find('div', class_="js-tweet-text-container").find('p').text.split('hPapic')[0].rstrip()
+    mars_weather = soup.find('div', class_="js-tweet-text-container").find('p').text.split('hPapic')[0].rstrip()
         
     # Only add to database if the weather if tweeted
     if 'InSight' in mars_weather:
