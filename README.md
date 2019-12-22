@@ -5,4 +5,6 @@
 
 `scrape_mars.py` = Scraping code.
 
+# Screenshot
+
 ![mars_dashboard](https://github.com/L0per/web_scraping_challenge/blob/master/mars_scraping.png?raw=true)
